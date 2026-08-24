@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #F9FAFB;
+    --bg-surface: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+    --accent-amber: #D97706;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-hard: rgba(0, 0, 0, 0.16);
+  }
+
+  .dark {
+    --bg-base: #0B0D11;
+    --bg-surface: #14171F;
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --accent-amber: #F59E0B;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hard: rgba(255, 255, 255, 0.16);
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: 'Geist', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Hard-edged borders & zero soft shadows */
+.axiom-border {
+  border: 1px solid var(--border-subtle);
+}
+
+.axiom-border-hard {
+  border: 1px solid var(--border-hard);
+}
+
+/* Tabular digits for numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* KaTeX custom overrides for Axiom theme */
+.katex-display {
+  margin: 1em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+}
+
+.dark .katex {
+  color: #F3F4F6 !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hard);
+  border-radius: 0px;
+}
